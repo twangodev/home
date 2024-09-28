@@ -2,9 +2,8 @@ RewriteEngine On
 
 # Redirect root "/" directly to newdomain.com without appending ~username
 RewriteCond %{THE_REQUEST} \s/+~username/?\s [NC]
-RewriteRule ^$ https://www.newdomain.com/ [R=301,L]
+RewriteRule ^$ https://twango.dev/ [R=301,L]
 
-# Redirect all other URLs, preserving the path, but excluding ~username from the redirect
-RewriteCond %{REQUEST_URI} !^/~username/?$ [NC]
+# Redirect all other pages normally to new domain, keeping the path intact
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ https://www.newdomain.com/$1 [R=301,L]
+RewriteRule ^(.*)$ https://twango.dev/$1 [R=301,L]
