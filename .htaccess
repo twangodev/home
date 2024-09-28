@@ -1,3 +1,9 @@
 RewriteEngine On
+
+# Redirect specific user page to new domain root
+RewriteCond %{REQUEST_URI} ^/~username/?$
+RewriteRule ^(.*)$ https://www.newdomain.com/ [R=301,L]
+
+# Redirect all other pages normally to new domain, keeping the path intact
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ https://twango.dev/ [R=301,L]
+RewriteRule ^(.*)$ https://www.newdomain.com/$1 [R=301,L]
