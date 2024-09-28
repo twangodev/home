@@ -1,3 +1,3 @@
 RewriteEngine On
 
-Redirect 301 / https://twango.dev/
+Redirect 301 /~jamesd https://twango.dev/
